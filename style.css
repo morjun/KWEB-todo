@@ -1,0 +1,156 @@
+:root {
+    --color-primary: #00bcd4;
+    --shadow: 0 1px 3px rgba(0,0,0,0.1);
+    --glow: 0 1px 3px rgba(155, 255, 248, 0.679);
+    --dark: rgb(42, 37, 37);
+    --bright: rgb(198, 213, 255);
+    --grey: #888;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bright);
+    color: var(--dark);
+}
+
+header {
+    padding-left: 1rem;
+}
+
+section {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+input:not([type="checkbox"]), button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
+.add-task-input {
+    display: flex;
+}
+
+.add-task-input input[type="text"] {
+    flex: 1 1 0%;
+    font-size: 1.125rem;
+    margin-right: 0.75rem;
+    padding: 1rem 0.5rem;
+    color: var(--dark);
+    background-color: #FFF;
+    border-radius: 0.25rem;
+    box-shadow: var(--shadow);
+}
+
+.add-task-input input[type="submit"] {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    color: #FFF;
+    background-color: var(--color-primary);
+    border-radius: 0.25rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.add-task input[type="submit"]:hover {
+    opacity: 0.65;
+}
+
+h2 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.task-list .tasks {
+    margin: 1rem 0;
+}
+
+.task-list .task {
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.task .content {
+    flex: 1 1 0%;
+}
+
+.task .content input {
+    color: var(--dark);
+    font-size: 1rem;
+}
+
+.task label {
+    display: block;
+    margin-right: 1rem;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--grey);
+    margin: 1rem 0;
+}
+
+.task.done .content input {
+    text-decoration: line-through;
+    color: gray;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.marker {
+   display: flex; 
+   align-items: center;
+   justify-content: center;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   border: 2px solid var(--color-primary);
+   box-shadow: var(--glow);
+}
+
+.marker::after
+{
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: var(--color-primary);
+    box-shadow: var(--glow);
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+
+input:checked ~ .marker::after,
+input:hover ~ .marker::after
+{
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+input:checked:hover ~ .marker::after
+{
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
