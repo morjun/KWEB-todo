@@ -43,10 +43,10 @@ input:not([type="checkbox"]), button {
 }
 
 .add-task-input input[type="text"] {
-    flex: 1 1 0%;
+    flex: 1 1 auto;
     font-size: 1.125rem;
     margin-right: 0.75rem;
-    padding: 1rem 0.5rem;
+    padding: 1rem;
     color: var(--dark);
     background-color: #FFF;
     border-radius: 0.25rem;
@@ -54,7 +54,8 @@ input:not([type="checkbox"]), button {
 }
 
 .add-task-input input[type="submit"] {
-    padding: 1rem 2rem;
+    flex: 0 1 15%;
+    padding: 1rem;
     font-size: 1.125rem;
     color: #FFF;
     background-color: var(--color-primary);
